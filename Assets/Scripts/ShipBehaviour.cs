@@ -1,18 +1,13 @@
-using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ToolUpgrades : MonoBehaviour
+public class ShipBehaviour : MonoBehaviour
 {
     private Camera mainCam;
-    public int RodLevel;
-    public int ReelSpeed;
-    [SerializeField] private GameObject UpgradePanel;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         mainCam= Camera.main;
-        RodLevel = 1;
-        ReelSpeed = 1;
     }
 
     // Update is called once per frame
@@ -27,14 +22,9 @@ public class ToolUpgrades : MonoBehaviour
             {
                 if (hit.collider.gameObject == gameObject)
                 {
-                    OpenMenu();
+                Debug.Log("Ship has sailed");
                 }
             }
         }
     }
-
-    public void OpenMenu()
-        {
-            UpgradePanel.SetActive(true);
-        }
 }
