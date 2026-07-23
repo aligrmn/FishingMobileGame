@@ -19,10 +19,10 @@ public class FishingLuckBehaviour : MonoBehaviour
             Debug.Log("You rolled: " + catchValue);
             if (ToolUpgrades.RodLevel==2)
             {
-                catchValue+=10;
+                catchValue+=5;
             }
 
-            HandleFishingResult(catchValue);
+         HandleFishingResult(catchValue);
 
             if(ToolUpgrades.RodLevel == 1)
             {
@@ -33,9 +33,13 @@ public class FishingLuckBehaviour : MonoBehaviour
 
     void HandleFishingResult(int value)
     {
-        if (value >= 90)
+        if (value >= 95)
             Debug.Log("Legendary catch!");
+        else if (value >= 80)
+            Debug.Log("Epic");
         else if (value >= 50)
+            Debug.Log("Random Cod");
+        else if (value >= 20)
             Debug.Log("Nice catch!");
         else
             Debug.Log("Just an old boot...");
