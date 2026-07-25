@@ -5,24 +5,13 @@ using TMPro;
 
 public class ToolUpgrades : MonoBehaviour
 {
-    [SerializeField] private TransactionManager TransactionManager;
     [SerializeField] private GameObject upgradePanel;
-    [SerializeField] private Button rodUpgrButton;
-    [SerializeField] private TextMeshProUGUI rodUpgValueText;
-    [SerializeField] private Button reelUpgrButton;
-    [SerializeField] private TextMeshProUGUI reelUpgValueText;
-
-
     public int rodUpgradeCost;
     public int reelUpgradeCost;
-    private Camera mainCam;
-    public int RodLevel;
-    public int ReelSpeed;    
+    private Camera mainCam;   
     void Start()
     {
         mainCam= Camera.main;
-        RodLevel = 1;
-        ReelSpeed = 1;
         rodUpgradeCost = 10;
         reelUpgradeCost = 10;
     }
@@ -30,18 +19,13 @@ public class ToolUpgrades : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        EnterUpgrade();
-        RodCostControl();
+        EnterUpgradePanel();
         RodPriceIncrease();
-        ReelCostControl();
         ReelPriceIncrease();
-        ValueTexter();
         
 
     }
-
-    
-    public void EnterUpgrade()
+    public void EnterUpgradePanel()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
@@ -52,63 +36,35 @@ public class ToolUpgrades : MonoBehaviour
             {
                 if (hit.collider.gameObject == gameObject)
                 {
-                   Debug.Log("TIklanabilir");
                     OpenMenu();
                 }
             }
         }
     }
     public void OpenMenu()
-        {
-            upgradePanel.SetActive(true);
-        }
-
-    public void CloseMenu()
-        {
-            upgradePanel.SetActive(false);
-        }
+    {
+        upgradePanel.SetActive(true);
+    }
     
-    public void RodCostControl()
-    {
-        if(rodUpgradeCost>TransactionManager.totalCoin)
-        {
-            rodUpgrButton.interactable = false;
-        }
-        else
-        {
-            rodUpgrButton.interactable = true;
-        }
-    }
-    public void ReelCostControl()
-    {
-        if(reelUpgradeCost>TransactionManager.totalCoin)
-        {
-            reelUpgrButton.interactable = false;
-        }
-        else
-        {
-            reelUpgrButton.interactable = true;
-        }
-    }
     public void RodPriceIncrease()
     {
-        if(RodLevel==1)
+        if(GameData.Instance.rodLevel==1)
         {
             rodUpgradeCost=10;
         }
-        else if (RodLevel==2)
+        else if (GameData.Instance.rodLevel==2)
         {
             rodUpgradeCost=20;
         }
-        else if (RodLevel==3)
+        else if (GameData.Instance.rodLevel==3)
         {
             rodUpgradeCost=50;
         }
-        else if (RodLevel==4)
+        else if (GameData.Instance.rodLevel==4)
         {
             rodUpgradeCost=100;
         }
-        else if (RodLevel==5)
+        else if (GameData.Instance.rodLevel==5)
         {
             rodUpgradeCost=150;
         }
@@ -116,47 +72,27 @@ public class ToolUpgrades : MonoBehaviour
 
     public void ReelPriceIncrease()
     {
-        if(ReelSpeed==1)
+        if(GameData.Instance.reelSpeed==1)
         {
             reelUpgradeCost=10;
         }
-        else if (ReelSpeed==2)
+        else if (GameData.Instance.reelSpeed==2)
         {
             reelUpgradeCost=30;
         }
-        else if (ReelSpeed==3)
+        else if (GameData.Instance.reelSpeed==3)
         {
             reelUpgradeCost=60;
         }
-        else if (ReelSpeed==4)
+        else if (GameData.Instance.reelSpeed==4)
         {
             reelUpgradeCost=120;
         }
-        else if (ReelSpeed==5)
+        else if (GameData.Instance.reelSpeed==5)
         {
             reelUpgradeCost=240;
         }
     }
-    public void UpradeRodOne()
-    {
-        RodLevel++;
-        TransactionManager.totalCoin=TransactionManager.totalCoin-rodUpgradeCost;
-        Debug.Log("You have"+TransactionManager.totalCoin+"left");
-        Debug.Log("Your rod level is 2");
-    }
 
-    public void UpradeReelOne()
-    {
-        ReelSpeed++;
-        TransactionManager.totalCoin=TransactionManager.totalCoin-reelUpgradeCost;
-        Debug.Log("You have"+TransactionManager.totalCoin+"left");
-        Debug.Log("Your reel level is 2");
-    }
-
-    public void ValueTexter()
-    {
-        rodUpgValueText.text=""+rodUpgradeCost;
-        reelUpgValueText.text=""+reelUpgradeCost;
-
-    }
+    
 }

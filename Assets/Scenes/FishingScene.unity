@@ -445,60 +445,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &299668613
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 299668615}
-  - component: {fileID: 299668614}
-  m_Layer: 0
-  m_Name: ToolUpgrader
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &299668614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299668613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 397243e3145b7354caadc32cf5b24493, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ToolUpgrades
-  TransactionManager: {fileID: 1522632361}
-  upgradePanel: {fileID: 0}
-  rodUpgrButton: {fileID: 0}
-  rodUpgValueText: {fileID: 0}
-  reelUpgrButton: {fileID: 0}
-  reelUpgValueText: {fileID: 0}
-  rodUpgradeCost: 0
-  reelUpgradeCost: 0
-  RodLevel: 0
-  ReelSpeed: 0
---- !u!4 &299668615
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299668613}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.99026, y: -1.05751, z: 41.14672}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &576145199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20d9710238a596479d7678417b51e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishingLuckBehaviour
-  ToolUpgrades: {fileID: 299668614}
+  ToolUpgrades: {fileID: 0}
   animator: {fileID: 0}
   castAnimName: CastLine
   extraPause: 1
@@ -1246,7 +1192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20d9710238a596479d7678417b51e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishingLuckBehaviour
-  ToolUpgrades: {fileID: 299668614}
+  ToolUpgrades: {fileID: 0}
   animator: {fileID: 1272838632}
   castAnimName: TestRodAnimation
   extraPause: 1
@@ -1399,51 +1345,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 936036794}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1522632360
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1522632362}
-  - component: {fileID: 1522632361}
-  m_Layer: 0
-  m_Name: TransactionManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1522632361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1522632360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09711360b084bee439cf3f35cad0b129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TransactionManager
-  totalCoin: 0
---- !u!4 &1522632362
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1522632360}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.9922, y: 8.86421, z: 12.96217}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1688654611
@@ -1828,10 +1729,8 @@ SceneRoots:
   - {fileID: 633633674}
   - {fileID: 654251374}
   - {fileID: 1136687971}
-  - {fileID: 299668615}
   - {fileID: 1799281874}
   - {fileID: 184349723}
   - {fileID: 256454611}
   - {fileID: 1272838636}
   - {fileID: 1240720376}
-  - {fileID: 1522632362}

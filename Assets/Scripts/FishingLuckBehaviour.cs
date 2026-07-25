@@ -6,7 +6,7 @@ public class FishingLuckBehaviour : MonoBehaviour
     [SerializeField] private ToolUpgrades ToolUpgrades;
     [SerializeField] private Animator animator;
     [SerializeField] private string castAnimName = "CastLine";
-    [SerializeField] private float extraPause = 1f;
+    [SerializeField] private float extraPause = 5f;
     
     void Start()
     {
@@ -39,10 +39,11 @@ public class FishingLuckBehaviour : MonoBehaviour
         int catchValue = Random.Range(1, 101);
         Debug.Log("You rolled: " + catchValue);
 
-        if (ToolUpgrades.RodLevel==2)
+        if (GameData.Instance.rodLevel==1)
         {
-            catchValue+=5;
+          Debug.Log("Level1 Rod");
         }
+        else catchValue+=5; Debug.Log("UpgradedRod");
 
         HandleFishingResult(catchValue);
     

@@ -713,51 +713,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124979321}
   m_CullTransparentMesh: 1
---- !u!1 &141473803
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 141473805}
-  - component: {fileID: 141473804}
-  m_Layer: 0
-  m_Name: TransactionManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &141473804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141473803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09711360b084bee439cf3f35cad0b129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TransactionManager
-  totalCoin: 20
---- !u!4 &141473805
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141473803}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 159.05647, y: 369.26468, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &165680635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,16 +1608,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397243e3145b7354caadc32cf5b24493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolUpgrades
-  TransactionManager: {fileID: 141473804}
   upgradePanel: {fileID: 1349639308}
-  rodUpgrButton: {fileID: 47774864}
-  rodUpgValueText: {fileID: 1789867820}
-  reelUpgrButton: {fileID: 124979323}
-  reelUpgValueText: {fileID: 266693641}
   rodUpgradeCost: 0
   reelUpgradeCost: 0
-  RodLevel: 0
-  ReelSpeed: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2007,6 +1955,53 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &773915660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 773915662}
+  - component: {fileID: 773915661}
+  m_Layer: 0
+  m_Name: GameData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &773915661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773915660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d968c5e15348ee34ea0384427a12bb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameData
+  totalCoin: 0
+  rodLevel: 1
+  reelSpeed: 1
+--- !u!4 &773915662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773915660}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -21.52869, y: -0.2, z: 23.54108}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -4259,5 +4254,5 @@ SceneRoots:
   - {fileID: 574099330}
   - {fileID: 47762706}
   - {fileID: 1626105886}
-  - {fileID: 141473805}
   - {fileID: 1966455664}
+  - {fileID: 773915662}
