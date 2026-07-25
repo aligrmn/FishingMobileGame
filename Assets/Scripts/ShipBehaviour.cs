@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class ShipBehaviour : MonoBehaviour
 {
+    [SerializeField] private GameObject ShipPanel;
     private Camera mainCam;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,7 +23,7 @@ public class ShipBehaviour : MonoBehaviour
             {
                 if (hit.collider.gameObject == gameObject)
                 {
-                Debug.Log("Ship has sailed");
+                ShipPanel.SetActive(true);;
                 }
             }
         }

@@ -1,36 +1,53 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 public class FishingLuckBehaviour : MonoBehaviour
 {
-    [SerializeField] private ToolUpgrades ToolUpgrades; // assigned in Inspector
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private ToolUpgrades ToolUpgrades;
+    [SerializeField] private Animator animator;
+    [SerializeField] private string castAnimName = "CastLine";
+    [SerializeField] private float extraPause = 1f;
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        // New Input System equivalent of GetMouseButtonDown(0)
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            int catchValue = Random.Range(1, 101);
-            Debug.Log("You rolled: " + catchValue);
-            if (ToolUpgrades.RodLevel==2)
-            {
-                catchValue+=5;
-            }
-
-         HandleFishingResult(catchValue);
-
-            if(ToolUpgrades.RodLevel == 1)
-            {
-            Debug.Log("You have level 1 pole");
-            }
+            animator.Play(castAnimName);
+            StartCoroutine(FishingSequence());
         }
     }
 
+    IEnumerator FishingSequence()
+    {
+        yield return null; // let Animator register the new state
+
+        float animLength = animator.GetCurrentAnimatorStateInfo(0).length;
+        yield return new WaitForSeconds(animLength); // wait for cast animation to finish
+
+        yield return new WaitForSeconds(extraPause); // extra pause after animation
+
+        RollForFish();
+    }
+    void RollForFish()
+    {
+        int catchValue = Random.Range(1, 101);
+        Debug.Log("You rolled: " + catchValue);
+
+        if (ToolUpgrades.RodLevel==2)
+        {
+            catchValue+=5;
+        }
+
+        HandleFishingResult(catchValue);
+    
+        
+    }
     void HandleFishingResult(int value)
     {
         if (value >= 95)
