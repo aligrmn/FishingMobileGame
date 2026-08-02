@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
-using TMPro;
 
 public class ToolUpgrades : MonoBehaviour
 {
@@ -37,6 +35,7 @@ public class ToolUpgrades : MonoBehaviour
                 if (hit.collider.gameObject == gameObject)
                 {
                     OpenMenu();
+                    Debug.Log("TIKLANDI");
                 }
             }
         }
