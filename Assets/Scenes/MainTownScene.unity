@@ -281,8 +281,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 401835537}
-        m_TargetAssemblyTypeName: ToolUpgrades, Assembly-CSharp
+      - m_Target: {fileID: 566146680}
+        m_TargetAssemblyTypeName: UpgradeUIBehaciour, Assembly-CSharp
         m_MethodName: UpradeRodOne
         m_Mode: 1
         m_Arguments:
@@ -663,8 +663,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 401835537}
-        m_TargetAssemblyTypeName: ToolUpgrades, Assembly-CSharp
+      - m_Target: {fileID: 566146680}
+        m_TargetAssemblyTypeName: UpgradeUIBehaciour, Assembly-CSharp
         m_MethodName: UpradeReelOne
         m_Mode: 1
         m_Arguments:
@@ -1731,6 +1731,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 566146679}
+  - component: {fileID: 566146680}
   m_Layer: 0
   m_Name: UpgradeBehaviour
   m_TagString: Untagged
@@ -1753,6 +1754,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &566146680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566146678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ed376e1603b0a41ab0b2ad73054cb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeUIBehaciour
+  upgradePanel: {fileID: 1349639308}
+  rodUpgrButton: {fileID: 47774864}
+  rodUpgValueText: {fileID: 1789867820}
+  reelUpgrButton: {fileID: 124979323}
+  reelUpgValueText: {fileID: 266693641}
+  toolUpgrades: {fileID: 224329803}
 --- !u!1 &574099326
 GameObject:
   m_ObjectHideFlags: 0
@@ -2539,7 +2558,6 @@ GameObject:
   - component: {fileID: 1073602040}
   - component: {fileID: 1073602039}
   - component: {fileID: 1073602038}
-  - component: {fileID: 1073602041}
   m_Layer: 5
   m_Name: CloseBtn
   m_TagString: Untagged
@@ -2610,7 +2628,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1073602039}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 566146680}
+        m_TargetAssemblyTypeName: UpgradeUIBehaciour, Assembly-CSharp
+        m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1073602039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2649,24 +2679,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073602036}
   m_CullTransparentMesh: 1
---- !u!114 &1073602041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073602036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7ed376e1603b0a41ab0b2ad73054cb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UpgradeUIBehaciour
-  upgradePanel: {fileID: 0}
-  rodUpgrButton: {fileID: 0}
-  rodUpgValueText: {fileID: 0}
-  reelUpgrButton: {fileID: 0}
-  reelUpgValueText: {fileID: 0}
-  toolUpgrades: {fileID: 0}
 --- !u!1 &1093908697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2890,8 +2902,8 @@ RectTransform:
   - {fileID: 1668701743}
   - {fileID: 2102193805}
   - {fileID: 69959907}
-  - {fileID: 1789867822}
   - {fileID: 266693643}
+  - {fileID: 1789867822}
   - {fileID: 47774863}
   - {fileID: 124979322}
   - {fileID: 2130447105}
