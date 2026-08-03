@@ -8,6 +8,8 @@ public class GameData : MonoBehaviour
     public int rodLevel = 1;
     public int reelSpeed = 1;
 
+    public int fishingAmount=0;
+
     void Awake()
     {
         if (Instance == null)
