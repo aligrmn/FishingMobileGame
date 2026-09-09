@@ -41,8 +41,12 @@ public class MarketBehaviour : MonoBehaviour
         marketPriceTexter();
 
     }
+    public void ClosePanel()
+    {
+        MarketPanel.SetActive(false);
+    } 
 
-    private void MarketActivation()
+    public void MarketActivation()
     {
         GameData.Instance.totalCoin -= marketCost;
         isMarketActive = true;
